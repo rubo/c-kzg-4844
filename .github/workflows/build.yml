@@ -1,0 +1,38 @@
+name: Build
+on:
+  push:
+    branches: [test/riscv32]
+
+defaults:
+  run:
+    shell: bash
+    working-directory: src
+
+jobs:
+  tests:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+    steps:
+      # Checkout repository and blst submodule.
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      # Run tests.
+      - name: Test
+        run: make test
+
+      # Run sanitizers.
+      # Doesn't work on Windows.
+      - name: Clang Sanitizers
+        if: matrix.os != 'windows-latest'
+        run: make sanitize
+
+      # Run static analyzer.
+      # Doesn't work on Windows.
+      - name: Clang Static Analyzer
+        if: matrix.os != 'windows-latest'
+        run: make analyze
