@@ -21,6 +21,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Build
+        run: make -j8
+
       # Run tests.
       - name: Test
         run: make test
