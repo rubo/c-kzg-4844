@@ -18,7 +18,7 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Set up GNU C compiler for arm64
+      - name: Set up GNU C compiler
         # if: matrix.arch == 'arm64'
         run: |
           curl -sL https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.11.22/riscv32-glibc-ubuntu-22.04-gcc-nightly-2024.11.22-nightly.tar.xz -o riscv32.tar.xz
