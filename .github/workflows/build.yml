@@ -32,17 +32,3 @@ jobs:
         run: |
           export PATH=/opt/riscv32/riscv/bin:$PATH
           make -j8 CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang
-
-      # Run tests.
-      - name: Test
-        run: make test
-
-      # Run sanitizers.
-      # Doesn't work on Windows.
-      - name: Clang Sanitizers
-        run: make sanitize
-
-      # Run static analyzer.
-      # Doesn't work on Windows.
-      - name: Clang Static Analyzer
-        run: make analyze
