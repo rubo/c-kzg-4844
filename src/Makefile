@@ -43,12 +43,7 @@ CFLAGS += \
 	-Winit-self \
 	-Winline \
 	-Winvalid-pch \
-	-Wmissing-declarations \
-	-Wmissing-field-initializers \
-	-Wmissing-format-attribute \
-	-Wmissing-include-dirs \
-	-Wmissing-noreturn \
-	-Wmissing-prototypes \
+	
 	-Wnested-externs \
 	-Wnull-dereference \
 	-Wold-style-definition \
