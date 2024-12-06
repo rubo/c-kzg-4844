@@ -75,11 +75,9 @@ CFLAGS += \
 
 # Cross-platform compilation settings.
 ifeq ($(PLATFORM),Windows)
-	CC = gcc
 	CFLAGS += -D_CRT_SECURE_NO_WARNINGS
 	CFLAGS += -Wno-missing-braces -Wno-format
 else
-	CC = clang
 	CFLAGS += -fPIC
 	CFLAGS += -Wmissing-braces -Wformat=2
 endif
