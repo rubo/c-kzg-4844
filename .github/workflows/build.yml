@@ -23,8 +23,10 @@ jobs:
           curl -sL https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.11.22/riscv32-glibc-ubuntu-22.04-llvm-nightly-2024.11.22-nightly.tar.xz -o riscv32.tar.xz
           mkdir -p /opt/riscv32
           tar xf riscv32.tar.xz -C /opt/riscv32/
+          rm riscv32.tar.xz
 
       - name: Build
+        working-directory: bindings/csharp
         run: |
           #export PATH=/opt/riscv32/riscv/bin:$PATH
           make
