@@ -43,7 +43,12 @@ CFLAGS += \
 	-Winit-self \
 	-Winline \
 	-Winvalid-pch \
-	
+	-Wmissing-declarations \
+	-Wmissing-field-initializers \
+	-Wmissing-format-attribute \
+	-Wmissing-include-dirs \
+	-Wmissing-noreturn \
+	-Wmissing-prototypes \
 	-Wnested-externs \
 	-Wnull-dereference \
 	-Wold-style-definition \
@@ -70,13 +75,13 @@ CFLAGS += \
 
 # Cross-platform compilation settings.
 ifeq ($(PLATFORM),Windows)
-#	CC = gcc
+	CC = gcc
 	CFLAGS += -D_CRT_SECURE_NO_WARNINGS
 	CFLAGS += -Wno-missing-braces -Wno-format
 else
-#	CC = clang
+	CC = clang
 	CFLAGS += -fPIC
-	CFLAGS += -Wformat=2 -Wno-overflow -Wno-conversion
+	CFLAGS += -Wmissing-braces -Wformat=2
 endif
 
 # Settings for blst.
