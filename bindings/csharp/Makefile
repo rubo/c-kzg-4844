@@ -50,7 +50,7 @@ ifdef ARCH
 endif
 
 .PHONY: all
-all: blst ckzg ckzg-dotnet
+all: blst ckzg #ckzg-dotnet
 
 .PHONY: blst
 blst:
