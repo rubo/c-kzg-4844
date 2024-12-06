@@ -12,7 +12,6 @@ defaults:
 jobs:
   tests:
     runs-on: ubuntu-latest
-      - ubuntu-latest
     steps:
       # Checkout repository and blst submodule.
       - uses: actions/checkout@v4
