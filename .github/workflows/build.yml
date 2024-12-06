@@ -2,6 +2,7 @@ name: Build
 on:
   push:
     branches: [test/riscv32]
+  workflow_dispatch:
 
 defaults:
   run:
