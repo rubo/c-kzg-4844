@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: |
           export PATH=/opt/riscv32/riscv/bin:$PATH
-          make CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang
+          make
 
       # # Run tests.
       # - name: Test
