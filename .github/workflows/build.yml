@@ -28,8 +28,8 @@ jobs:
       - name: Build
         working-directory: bindings/csharp
         run: |
-          #export PATH=/opt/riscv32/riscv/bin:$PATH
-          make
+          export PATH=/opt/riscv32/riscv/bin:$PATH
+          make CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang
 
       # # Run tests.
       # - name: Test
