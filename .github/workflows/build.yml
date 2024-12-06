@@ -32,7 +32,7 @@ jobs:
         run: |
           #export PATH=/opt/riscv32/riscv/bin:$PATH
           #./build.sh CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang -shared
-          make -j8 #CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang
+          make -j8
 
       # Run tests.
       - name: Test
