@@ -21,7 +21,7 @@ jobs:
       - name: Set up GNU C compiler
         # if: matrix.arch == 'arm64'
         run: |
-          curl -sL https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.11.22/riscv64-glibc-ubuntu-22.04-gcc-nightly-2024.11.22-nightly.tar.xz -o riscv32.tar.xz
+          curl -sL https://github.com/riscv-collab/riscv-gnu-toolchain/releases/download/2024.11.22/riscv32-glibc-ubuntu-22.04-llvm-nightly-2024.11.22-nightly.tar.xz -o riscv32.tar.xz
           mkdir -p /opt/riscv32
           tar xf riscv32.tar.xz -C /opt/riscv32/
           #chmod -R +x /opt/riscv32/riscv
@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: |
           export PATH=/opt/riscv32/riscv/bin:$PATH
-          make -j8 CC=/opt/riscv32/riscv/bin/riscv64-unknown-linux-gnu-gcc
+          make -j8 CC=/opt/riscv32/riscv/bin/riscv32-unknown-linux-gnu-clang
 
       # Run tests.
       - name: Test
