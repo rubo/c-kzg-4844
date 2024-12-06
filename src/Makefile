@@ -20,7 +20,7 @@ ifeq ($(PLATFORM),Darwin)
 endif
 
 # The base compiler flags. More can be added on command line.
-CFLAGS += -I. -I../inc -O2 -Werror -Wno-error=shorten-64-to-32
+CFLAGS += -I. -I../inc -O2 -Werror -Wno-error=shorten-64-to-32 -Wno-constant-conversion
 # Enable a bunch of optional warnings.
 CFLAGS += \
 	-pedantic \
