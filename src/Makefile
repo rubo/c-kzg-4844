@@ -81,7 +81,7 @@ ifeq ($(PLATFORM),Windows)
 else
 #	CC = clang
 	CFLAGS += -fPIC
-	CFLAGS += -Wmissing-braces -Wformat=2 -Wno-error=shorten-64-to-32 -Wno-constant-conversion
+	CFLAGS += -Wmissing-braces -Wformat=2 
 endif
 
 # Settings for blst.
