@@ -50,7 +50,7 @@ ifdef ARCH
 endif
 
 .PHONY: all
-all: blst ckzg #ckzg-dotnet
+all: blst ckzg ckzg-dotnet
 
 .PHONY: blst
 blst:
@@ -60,7 +60,7 @@ blst:
 ckzg: blst
 	$(CLANG_EXECUTABLE) $(CFLAGS) -o $(CKZG_LIBRARY_PATH) $(TARGETS)
 
-# .PHONY: ckzg-dotnet
-# ckzg-dotnet: ckzg
-# 	dotnet build
-# 	dotnet test
+.PHONY: ckzg-dotnet
+ckzg-dotnet: ckzg
+	dotnet build
+	dotnet test
